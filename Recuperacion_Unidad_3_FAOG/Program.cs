@@ -49,7 +49,7 @@
                         case "2":
                             Console.WriteLine("Ingrese la marca del Automovil");
                             marca = Console.ReadLine();
-                            lista.Buscar(marca);
+                            lista.BuscarTodos(marca);
                             break;
                             case "3":
                             lista.MostraLista();

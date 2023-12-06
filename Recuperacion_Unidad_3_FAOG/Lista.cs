@@ -45,45 +45,7 @@ namespace Recuperacion_Unidad_3_FAOG
                 }
             }
         }
-        //Metodo para buscar
-        public void Buscar(string Marca)
-        {
-            //Verificar si la lista esta vacia
-            if(Esnulo())
-            {
-                Console.WriteLine("No tiene valores la lista");
-                return;
-            }
-            else
-            {
-                Nodo actual = primero;
-                bool Encontrar = false;
-                int cont = 0;
-                while(actual != null)
-                {
-                    cont++;
-                    if(actual.gCarro.Marca == Marca)
-                    {
-                        Console.WriteLine($"El carro {actual.gCarro.Marca} se encuentra");
-                        Encontrar = true;
-                        break;
-                    }
-                    else
-                    {
-                        actual = actual.gSiguiente;
-                        Console.WriteLine("No se encuentra");
-                    }
-                    if (!Encontrar)
-                    {
-                        Console.WriteLine("El Modelo no se encuentra en la lista");
-                        return;
-                    }
-                }
-              
-
-            }
-           
-        }
+       
         //Metodo para mostrar
         public void MostraLista()
         {
@@ -136,5 +98,40 @@ namespace Recuperacion_Unidad_3_FAOG
                 }
             } while (intercambiado);
         }
+        //Metodo para buscar
+        public void BuscarTodos(string Marca)
+        {
+            // Verificar si la lista está vacía
+            if (Esnulo())
+            {
+                Console.WriteLine("No tiene valores la lista");
+                return;
+            }
+            else
+            {
+                Nodo actual = primero;
+                bool Encontrar = false;
+                while (actual != null)
+                {
+                    if (actual.gCarro.Marca == Marca)
+                    {
+                        Console.WriteLine($"El carro {actual.gCarro.Marca} se encuentra");
+
+                        
+                        Console.WriteLine($"Modelo: {actual.gCarro.Modelo}, Año: {actual.gCarro.Año}");
+
+                        Encontrar = true;
+                    }
+
+                    actual = actual.gSiguiente;
+                }
+
+                if (!Encontrar)
+                {
+                    Console.WriteLine("La Marca no se encuentra en la lista");
+                }
+            }
+        }
+
     }
 }
